@@ -9,12 +9,7 @@ With the release of https://github.com/hawkular/hawkular-apm/releases/tag/0.14.0
 When a new version of a service is deployed, potentially as part of a deployment strategy (such as Canary, A/B, Blue/Green), it is important
 to be able to assess the impact the new version of the service has in comparison to existing/previous versions.
 
-The new "Services" tab in the UI provides just such a feature. When trace data is reported by the Hawkular APM OpenTracing provider (Java
-or JavaScript), it identifies the service name and optional version (known as a buildStamp). When the services are deployed within OpenShift
-the details are automatically obtained from the environment - however when running services outside of OpenShift, these values can be provided
-as environment variables (_HAWKULAR_APM_SERVICE_NAME_ and _HAWKULAR_APM_BUILDSTAMP_ respectively).
-
-At the top of the new page, you can select the service name and then a particular version (or _All_) to see the performance of that service/version
+The new "Services" tab in the UI provides just such a feature. At the top of the new page, you can select the service name and then a particular version (or _All_) to see the performance of that service/version
 over the defined time span. The number of transactions and faults are also shown. Once the 'Add' button is pressed, the details will be displayed.
 
 To perform a comparison with either the same service, but different version, or between different services - simply select their details and press
@@ -33,6 +28,11 @@ endif::[]
 ifdef::env-github[]
 image::../../../../../assets/img/blog/2017/2017-02-04-apm-service-deployment.png[Comparison of service/version information]
 endif::[]
+
+When trace data is reported by the Hawkular APM OpenTracing provider (Java
+or JavaScript), it identifies the service name and optional version (known as a buildStamp). When the services are deployed within OpenShift
+the details are automatically obtained from the environment - however when running services outside of OpenShift, these values can be provided
+as environment variables (_HAWKULAR_APM_SERVICE_NAME_ and _HAWKULAR_APM_BUILDSTAMP_ respectively).
 
 If you need any assistance, feel free to join us via IRC at `#hawkular`
 on Freenode.
